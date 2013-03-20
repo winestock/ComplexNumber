@@ -89,6 +89,18 @@ ComplexNumber.prototype = {
 	},
 	
 	/**
+	 * 3:28 PM, 3-20-2013
+	 * The division operation divides two complex numbers.
+	 * 
+	 * a + bi   ac + bd   bc - ad
+	 * ------ = ------- + -------i
+	 * c + di   c^2+d^2   c^2+d^2
+	 */
+	 div: function() {
+	 	return 0;
+	},
+	
+	/**
 	 * The string representation of a complex number (e.g. 4 + 3i)
 	 * 
 	 * @return String
