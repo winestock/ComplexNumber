@@ -95,6 +95,8 @@ ComplexNumber.prototype = {
 	 * a + bi   ac + bd   bc - ad
 	 * ------ = ------- + -------i
 	 * c + di   c^2+d^2   c^2+d^2
+	 * 
+	 * For now, it returns zero while I learn more JavaScript.
 	 */
 	 div: function() {
 	 	return 0;
