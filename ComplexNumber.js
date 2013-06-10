@@ -91,7 +91,7 @@ var ComplexMath = {
 	
 
 	/**
-	 * 3:28 PM, 3-20-2013
+	 * 
 	 * The division operation divides two complex numbers.
 	 * 
 	 * a + bi   ac + bd   bc - ad
@@ -100,13 +100,8 @@ var ComplexMath = {
 	 *
 	 */
 	 div: function(dividend, divisor) {
-	 	var quotient = new ComplexNumber;
 
-	     quotient.real = [(dividend.real * divisor.real) + (dividend.imaginary * divisor.imaginary)] / [(dividend.real * divisor.real) + (dividend.imaginary * divisor.imaginary)];
-
-	     quotient.imaginary = [(dividend.imaginary * divisor.real) - (dividend.real * divisor.imaginary)] / [(dividend.real * divisor.real) + (dividend.imaginary * divisor.imaginary)];
-
-return quotient;
+	 return new ComplexNumber = [(dividend.real * divisor.real) + (dividend.imaginary * divisor.imaginary)] / [(dividend.real * divisor.real) + (dividend.imaginary * divisor.imaginary)], [(dividend.imaginary * divisor.real) - (dividend.real * divisor.imaginary)] / [(dividend.real * divisor.real) + (dividend.imaginary * divisor.imaginary)];
 	}
 
 };
