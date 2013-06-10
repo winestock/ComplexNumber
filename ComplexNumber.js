@@ -84,14 +84,9 @@ var ComplexMath = {
 	 * 
 	 * @return ComplexNumber
 	 */
-	mult: function() {
-	    var multiplier = arguments[0];
-		
-	    if(arguments.length != 1)
-	        multiplier = new ComplexNumber(arguments[0], arguments[1]);
-		 
-	    return new ComplexNumber(this.real * multiplier.real - this.imaginary * multiplier.imaginary, 
-								this.real * multiplier.imaginary + this.imaginary * multiplier.real);
+	mult: function(multiplicand, multiplier) {
+	    
+	return new ComplexNumber(multiplicand.real * multiplier.real - multiplicand.imaginary * multiplier.imaginary, multiplicand.real * multiplier.imaginary + multiplicand.imaginary * multiplier.real);
 	},
 	
 
