@@ -95,11 +95,16 @@ ComplexNumber.prototype = {
 	 * a + bi   ac + bd   bc - ad
 	 * ------ = ------- + -------i
 	 * c + di   c^2+d^2   c^2+d^2
-	 * 
-	 * For now, it returns zero while I learn more JavaScript.
+	 *
 	 */
-	 div: function() {
-	 	return 0;
+	 div: function(dividend, divisor) {
+	 	var quotient = new ComplexNumber;
+
+	     quotient.real = [(dividend.real * divisor.real) + (dividend.imaginary * divisor.imaginary)] / [(dividend.real * divisor.real) + dividend.imaginary * divisor.imaginary)];
+
+	     quotient.imaginary = [(dividend.imaginary * divisor.real) - (dividend.real * divisor.imaginary)] / [(dividend.real * divisor.real) + (dividend.imaginary * divisor.imaginary)];
+
+return quotient;
 	},
 	
 	/**
