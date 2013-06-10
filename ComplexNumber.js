@@ -101,5 +101,4 @@ var ComplexMath = {
 	 div: function(dividend, divisor) {
 	 return new ComplexNumber((dividend.real * divisor.real + dividend.imaginary * divisor.imaginary) / (divisor.real * divisor.real + divisor.imaginary * divisor.imaginary), (dividend.imaginary * divisor.real - dividend.real * divisor.imaginary) / (divisor.real * divisor.real + divisor.imaginary * divisor.imaginary));
 	}
-
 };
