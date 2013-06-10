@@ -29,8 +29,38 @@ ComplexNumber.prototype = {
 	 * 
 	 * @type Number
 	 */
+
 	imaginary: 0,
+
+	/**
+	 * The modulus of a complex number
+	 * 
+	 * @return number
+	 */
+	mod: function() {
+	    return Math.sqrt(this.real * this.real + this.imaginary * this.imaginary);
+	},
 	
+	/**
+	 * The string representation of a complex number (e.g. 4 + 3i)
+	 * 
+	 * @return String
+	 */
+	toString: function() {
+	    return this.real + " + " + this.imaginary + "i";
+	},
+
+    /** The conjugate function returns the conjugate of the complex number.  This is a unary operation, so I'll include it, here. */
+
+    conjugate: function() {
+	return new ComplexNumber(this.real - this.imaginary);
+	},
+};
+
+/** I'm chopping this into two objects.  The ComplexNumber object stores the complex number as well as unary operations on the complex number.  The ComplexMath object stores math operations that work on at least two complex numbers.**/
+
+ComplexMath.prototype = {
+    
 	/**
 	 * The add operation which sums the real and complex parts separately
 	 * 
@@ -79,15 +109,7 @@ ComplexNumber.prototype = {
 								this.real * multiplier.imaginary + this.imaginary * multiplier.real);
 	},
 	
-	/**
-	 * The modulus of a complex number
-	 * 
-	 * @return number
-	 */
-	mod: function() {
-	    return Math.sqrt(this.real * this.real + this.imaginary * this.imaginary);
-	},
-	
+
 	/**
 	 * 3:28 PM, 3-20-2013
 	 * The division operation divides two complex numbers.
@@ -105,19 +127,6 @@ ComplexNumber.prototype = {
 	     quotient.imaginary = [(dividend.imaginary * divisor.real) - (dividend.real * divisor.imaginary)] / [(dividend.real * divisor.real) + (dividend.imaginary * divisor.imaginary)];
 
 return quotient;
-	},
-	
-	/**
-	 * The string representation of a complex number (e.g. 4 + 3i)
-	 * 
-	 * @return String
-	 */
-	toString: function() {
-	    return this.real + " + " + this.imaginary + "i";
 	}
-    /* The conjugate function returns the conjugate of the complex number.  This is a unary operation, so I'll include it, here. */
 
-    conjugate: function() {
-	return new ComplexNumber(this.real - this.imaginary);
-	};
 };
