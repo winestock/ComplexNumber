@@ -1,10 +1,12 @@
 /** ComplexNumber class
  * 
- * The complex number class allows us to do complex math. It accepts a real and imaginary part
+ * The complex number class holds complex numbers and performs unary operations on them.  It accepts a real and imaginary part.
  * 
- * @author Jan Hartigan
+ * @author Rudolf Winestock
+ * 
+ * I forked this project from Jan Hartigan's ComplexNumber project.  I have made a number of structural changes to it.
  * @inspiration http://www.java2s.com/Code/JavaScript/Language-Basics/Complexclasstorepresentcomplexnumbers.htm
- * @version 1.0.0 (2011-03-08)
+ * @version 1.0.0 (6-10-2013)
  */
 
 
@@ -36,6 +38,7 @@ ComplexNumber.prototype = {
 	 * The modulus of a complex number
 	 * 
 	 * @return number
+	 * 
 	 */
 	mod: function() {
 	    return Math.sqrt(this.real * this.real + this.imaginary * this.imaginary);
@@ -45,34 +48,50 @@ ComplexNumber.prototype = {
 	 * The string representation of a complex number (e.g. 4 + 3i)
 	 * 
 	 * @return String
+	 * 
 	 */
 	toString: function() {
 	    return this.real + " + " + this.imaginary + "i";
 	},
 
-    /** The conjugate function returns the conjugate of the complex number.  This is a unary operation, so I'll include it, here. */
-
+    /** The conjugate function returns the conjugate of the complex number.
+     * 
+     * @return ComplexNumber
+     * 
+     * */
     conjugate: function() {
 	return new ComplexNumber(this.real - this.imaginary);
 	}
 };
 
-/** I'm chopping this into two objects.  The ComplexNumber object stores the complex number as well as unary operations on the complex number.  The ComplexMath object stores math operations that work on at least two complex numbers.**/
+
+/** ComplexMath class
+ * 
+ * The ComplexMath object stores math operations that work on at least two complex numbers.
+ */
 
 var ComplexMath = {
-    
 	/**
 	 * The add operation which sums the real and complex parts separately
 	 * 
+	 * @param ComplexNumber   addend
+	 * @param ComplexNumber   summand
 	 * 
 	 * @return ComplexNumber
+	 * 
 	 */
 	add: function(addend, summand) {
         return new ComplexNumber(addend.real + summand.real, addend.imaginary + summand.imaginary);
 	},
 	
 	/**
-	 * The subtract operation which subtracts the real and complex parts from one another separately
+	 * The subtract operation subtracts the real and complex parts from one another separately
+	 * 
+	 * @param ComplexNumber   minuend
+	 * @param ComplexNumber   subtrahend
+	 * 
+	 * @return ComplexNumber
+	 * 
 	 */
 	sub: function(minuend, subtrahend) {
         return new ComplexNumber(minuend.real - subtrahend.real, minuend.imaginary - subtrahend.imaginary);
@@ -81,22 +100,29 @@ var ComplexMath = {
 	/**
 	 * The multiplication operation which multiplies two complex numbers
 	 * 
+	 * @param ComplexNumber   multiplicand
+	 * @param ComplexNumber   multiplier
 	 * 
 	 * @return ComplexNumber
+	 * 
 	 */
 	mult: function(multiplicand, multiplier) {
 	return new ComplexNumber(multiplicand.real * multiplier.real - multiplicand.imaginary * multiplier.imaginary, multiplicand.real * multiplier.imaginary + multiplicand.imaginary * multiplier.real);
 	},
 	
-
 	/**
+	 * The division operation divides two complex numbers according to the following formula:
 	 * 
-	 * The division operation divides two complex numbers.
 	 * 
 	 * a + bi   ac + bd   bc - ad
-	 * ------ = ------- + -------i
+	 * ------ = ------- + -------*i
 	 * c + di   c^2+d^2   c^2+d^2
 	 *
+	 * @param ComplexNumber   dividend
+	 * @param ComplexNumber   divisor
+	 * 
+	 * @return ComplexNumber
+	 * 
 	 */
 	 div: function(dividend, divisor) {
 	 return new ComplexNumber((dividend.real * divisor.real + dividend.imaginary * divisor.imaginary) / (divisor.real * divisor.real + divisor.imaginary * divisor.imaginary), (dividend.imaginary * divisor.real - dividend.real * divisor.imaginary) / (divisor.real * divisor.real + divisor.imaginary * divisor.imaginary));
