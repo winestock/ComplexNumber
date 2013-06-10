@@ -64,8 +64,6 @@ var ComplexMath = {
 	/**
 	 * The add operation which sums the real and complex parts separately
 	 * 
-	 * @param ==> 	If there is one argument, assume it's a ComplexNumber
-	 * 				If there are two arguments, assume the first is the real part and the second is the imaginary part
 	 * 
 	 * @return ComplexNumber
 	 */
@@ -75,11 +73,6 @@ var ComplexMath = {
 	
 	/**
 	 * The subtract operation which subtracts the real and complex parts from one another separately
-	 * 
-	 * @param ==> 	If there is one argument, assume it's a ComplexNumber
-	 * 				If there are two arguments, assume the first is the real part and the second is the imaginary part
-	 * 
-	 * @return ComplexNumber
 	 */
 	sub: function(minuend, subtrahend) {
         return new ComplexNumber(minuend.real - subtrahend.real, minuend.imaginary - subtrahend.imaginary);
@@ -88,8 +81,6 @@ var ComplexMath = {
 	/**
 	 * The multiplication operation which multiplies two complex numbers
 	 * 
-	 * @param ==> 	If there is one argument, assume it's a ComplexNumber
-	 * 				If there are two, assume the first is the real part and the second is the imaginary part
 	 * 
 	 * @return ComplexNumber
 	 */
