@@ -110,4 +110,9 @@ ComplexNumber.prototype = {
 	toString: function() {
 	    return this.real + " + " + this.imaginary + "i";
 	}
+    // The conjugate function returns the conjugate of the complex number.  This is a unary operation, so I'll include it, here.
+    '
+    conjugate: function() {
+	return new ComplexNumber(this.real - this.imaginary)
+	}
 };
