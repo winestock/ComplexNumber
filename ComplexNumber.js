@@ -69,11 +69,8 @@ var ComplexMath = {
 	 * 
 	 * @return ComplexNumber
 	 */
-	add: function() {
-	    if(arguments.length == 1)
-	        return new ComplexNumber(this.real + arguments[0].real, this.imaginary + arguments[0].imaginary);
-	    else
-	        return new ComplexNumber(this.real + arguments[0], this.imaginary + arguments[1]);
+	add: function(addend, summand) {
+        return new ComplexNumber(addend.real + summand.real, addend.imaginary + summand.imaginary);
 	},
 	
 	/**
@@ -84,11 +81,8 @@ var ComplexMath = {
 	 * 
 	 * @return ComplexNumber
 	 */
-	sub: function() {
-	    if(arguments.length == 1)
-	        return new ComplexNumber(this.real - arguments[0].real, this.imaginary - arguments[0].imaginary);
-	    else
-	        return new ComplexNumber(this.real - arguments[0], this.imaginary - arguments[1]);
+	sub: function(minuend, subtrahend) {
+        return new ComplexNumber(minuend.real - subtrahend.real, minuend.imaginary - subtrahend.imaginary);
 	},
 	
 	/**
