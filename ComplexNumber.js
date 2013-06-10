@@ -99,7 +99,7 @@ var ComplexMath = {
 	 *
 	 */
 	 div: function(dividend, divisor) {
-	 return new ComplexNumber = (dividend.real * divisor.real + dividend.imaginary * divisor.imaginary) / (dividend.real * divisor.real + dividend.imaginary * divisor.imaginary), (dividend.imaginary * divisor.real - dividend.real * divisor.imaginary) / (dividend.real * divisor.real + dividend.imaginary * divisor.imaginary);
+	 return new ComplexNumber((dividend.real * divisor.real + dividend.imaginary * divisor.imaginary) / (dividend.real * divisor.real + dividend.imaginary * divisor.imaginary), (dividend.imaginary * divisor.real - dividend.real * divisor.imaginary) / (dividend.real * divisor.real + dividend.imaginary * divisor.imaginary));
 	}
 
 };
