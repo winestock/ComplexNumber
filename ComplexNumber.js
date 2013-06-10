@@ -59,7 +59,7 @@ ComplexNumber.prototype = {
 
 /** I'm chopping this into two objects.  The ComplexNumber object stores the complex number as well as unary operations on the complex number.  The ComplexMath object stores math operations that work on at least two complex numbers.**/
 
-ComplexMath.prototype = {
+var ComplexMath = {
     
 	/**
 	 * The add operation which sums the real and complex parts separately
