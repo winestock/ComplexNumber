@@ -54,7 +54,7 @@ ComplexNumber.prototype = {
 
     conjugate: function() {
 	return new ComplexNumber(this.real - this.imaginary);
-	},
+	}
 };
 
 /** I'm chopping this into two objects.  The ComplexNumber object stores the complex number as well as unary operations on the complex number.  The ComplexMath object stores math operations that work on at least two complex numbers.**/
