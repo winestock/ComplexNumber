@@ -100,7 +100,7 @@ ComplexNumber.prototype = {
 	 div: function(dividend, divisor) {
 	 	var quotient = new ComplexNumber;
 
-	     quotient.real = [(dividend.real * divisor.real) + (dividend.imaginary * divisor.imaginary)] / [(dividend.real * divisor.real) + dividend.imaginary * divisor.imaginary)];
+	     quotient.real = [(dividend.real * divisor.real) + (dividend.imaginary * divisor.imaginary)] / [(dividend.real * divisor.real) + (dividend.imaginary * divisor.imaginary)];
 
 	     quotient.imaginary = [(dividend.imaginary * divisor.real) - (dividend.real * divisor.imaginary)] / [(dividend.real * divisor.real) + (dividend.imaginary * divisor.imaginary)];
 
@@ -115,9 +115,9 @@ return quotient;
 	toString: function() {
 	    return this.real + " + " + this.imaginary + "i";
 	}
-    // The conjugate function returns the conjugate of the complex number.  This is a unary operation, so I'll include it, here.
-    '
+    /* The conjugate function returns the conjugate of the complex number.  This is a unary operation, so I'll include it, here. */
+
     conjugate: function() {
-	return new ComplexNumber(this.real - this.imaginary)
-	}
+	return new ComplexNumber(this.real - this.imaginary);
+	};
 };
