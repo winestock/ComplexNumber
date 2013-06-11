@@ -150,5 +150,27 @@ var ComplexMath = {
 	 */
 	 div: function(dividend, divisor) {
 	 return new ComplexNumber((dividend.real * divisor.real + dividend.imaginary * divisor.imaginary) / (divisor.real * divisor.real + divisor.imaginary * divisor.imaginary), (dividend.imaginary * divisor.real - dividend.real * divisor.imaginary) / (divisor.real * divisor.real + divisor.imaginary * divisor.imaginary));
-	}
+	},
+
+    /**
+     * The power function takes a complex number to a given power.  This function uses the De Moivre formula.  This means that the power must be an integer.  The form of De Moivre's formula used here is:
+     * 
+     * (base)^x = (base.mod)^x * cis(x*t)
+     * 
+     * where base.mod is the modulus of the complex number
+     * x is the power to which the complex number is being taken
+     * t is the polar argument of the complex number
+     * cis(n) is an abbreviation for cos(n) + i*sin(n)
+     * 
+     * The Math.round function is needed because using the De Moivre formula produces approximate results.
+     * 
+     * @param ComplexNumber   base
+     * @param Integer         exponent
+     * 
+     * @return ComplexNumber
+     * 
+     */
+    power: function(base, exponent) {
+	return new ComplexNumber(Math.round(Math.pow(base.mod, exponent) * Math.cos(base.polarArgument * exponent)), (Math.round(Math.pow(bas.mod, exponent) * Math.sin(base.polarArgument * exponent))));
+    }
 };
