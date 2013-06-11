@@ -75,7 +75,7 @@ ComplexNumber.prototype = {
      * 
      */
     toStringPolar: function() {
-	return this.mod + this.polarArgument;
+	return this.mod + ", " + this.polarArgument;
     },
 
     /** The conjugate function returns the conjugate of the complex number.
