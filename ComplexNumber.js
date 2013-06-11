@@ -68,6 +68,16 @@ ComplexNumber.prototype = {
 		return this.real + " - " + Math.abs(this.imaginary) + "i";
 	},
 
+    /**
+     * Use this function if you want to print out the complex number in polar form rather than the default rectangular form.
+     * 
+     * @return String
+     * 
+     */
+    toStringPolar: function() {
+	return mod + polarArgument;
+    },
+
     /** The conjugate function returns the conjugate of the complex number.
      * 
      * @return ComplexNumber
