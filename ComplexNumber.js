@@ -44,6 +44,17 @@ ComplexNumber.prototype = {
 	    return Math.sqrt(this.real * this.real + this.imaginary * this.imaginary);
 	},
 	
+    /**
+     * The argument of a complex number (polar form).
+     * Please note that this number will be in radians.
+     * 
+     * @return number
+     * 
+     */
+    polarArgument: function() {
+	return Math.atan2(this.imaginary, this.real);
+    },
+
 	/**
 	 * The string representation of a complex number (e.g. 4 + 3i)
 	 * 

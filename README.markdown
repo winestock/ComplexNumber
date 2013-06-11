@@ -35,20 +35,12 @@ complex.toString(); //returns "3 + 5i"
 The ComplexNumber object holds both the complex number, itself, as well as methods that act as unary operations on that complex number.
 
 ## Unary Methods
+
 ### mod
 
 Returns the modulus of a complex number. The modulus is defined as the square root of the real part squared plus the imaginary part squared. This basically turns the complex number into a purely real number.
 
-<pre>
-/**
- * The modulus of a complex number
- * 
- * @return number
- */
-mod: function() {
-    return Math.sqrt(this.real * this.real + this.imaginary * this.imaginary);
-},
-</pre>
+Note that the modulus is the first part of a complex number expressed as polar coordinates (it's the r in (r, theta)).
 
 **Example usage**:
 
@@ -57,6 +49,10 @@ var complex = new ComplexNumber(3, 4);
 
 complex.mod(); //returns 5 (3^2=9 and 4^2=16. 9 + 16 = 25. Square root of 25 is 5. 
 </pre>
+
+### polarArgument
+
+By default, this code works on complex numbers in rectangular form.  If you want to get the polar form (i.e., r theta), then use the mod function to get the modulus and this function to get the argument.
 
 ### toString
 
@@ -74,7 +70,7 @@ complex.toString(); //returns "3 + 4i"
 
 This function returns the conjugate of a complex number.  I.e., for a complex number (a + bi), ComplexNumber.conjugate will return (a - bi).
 
-### Binary Methods
+## Binary Methods
 
 These methods are "binary" in the sense that they take two arguments.  These mathematical operations are `add()`, `sub()`, `mult()`, `div()`.  I moved these methods into a different object so as to make math operations on complex numbers look more natural.
 
