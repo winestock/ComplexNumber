@@ -70,6 +70,10 @@ var complex = new ComplexNumber(3, 4);
 complex.toString(); //returns "3 + 4i" 
 </pre>
 
+### conjugate
+
+This function returns the conjugate of a complex number.  I.e., for a complex number (a + bi), ComplexNumber.conjugate will return (a - bi).
+
 ### Binary Methods
 
 These methods are "binary" in the sense that they take two arguments.  These mathematical operations are `add()`, `sub()`, `mult()`, `div()`.  I moved these methods into a different object so as to make math operations on complex numbers look more natural.
