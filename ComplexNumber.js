@@ -51,7 +51,10 @@ ComplexNumber.prototype = {
 	 * 
 	 */
 	toString: function() {
+	    if (this.imaginary >= 0)
 	    return this.real + " + " + this.imaginary + "i";
+	    else if (this.imaginary < 0)
+		return this.real + " - " + Math.abs(this.imaginary) + "i";
 	},
 
     /** The conjugate function returns the conjugate of the complex number.
