@@ -60,18 +60,7 @@ complex.mod(); //returns 5 (3^2=9 and 4^2=16. 9 + 16 = 25. Square root of 25 is 
 
 ### toString
 
-Returns the string representation of a complex number (e.g. "3 + 5i")
-
-<pre>
-/**
- * The string representation of a complex number (i.e. 4 + 3i)
- * 
- * @return String
- */
-toString: function() {
-    return this.real + " + " + this.imaginary + "i";
-}
-</pre>
+Returns the string representation of a complex number (e.g. "3 + 5i").  If the imaginary part is negative, then a minus sign will be placed in front of it instead of a plus sign.
 
 **Example usage**:
 
