@@ -131,3 +131,7 @@ c + di   c^2+d^2   c^2+d^2
 </pre>
 
 where (a + bi) is the dividend and (c + di) is the divisor.
+
+### power
+
+The power function takes two arguments.  The first argument must be the name of a complex number.  The second argument is the power to which that complex number will be raised.  This function uses De Moivre's formula, so the power must be an integer.
