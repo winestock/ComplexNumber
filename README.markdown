@@ -66,6 +66,10 @@ var complex = new ComplexNumber(3, 4);
 complex.toString(); //returns "3 + 4i" 
 </pre>
 
+### toStringPolar
+
+Prints the complex number in polar coordinates rather than the default rectangular form.  Note that the angle measurement is in radians.
+
 ### conjugate
 
 This function returns the conjugate of a complex number.  I.e., for a complex number (a + bi), ComplexNumber.conjugate will return (a - bi).
