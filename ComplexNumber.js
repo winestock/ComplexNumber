@@ -171,6 +171,6 @@ var ComplexMath = {
      * 
      */
     power: function(base, exponent) {
-	return new ComplexNumber(Math.round(Math.pow(base.mod, exponent) * Math.cos(base.polarArgument * exponent)), (Math.round(Math.pow(bas.mod, exponent) * Math.sin(base.polarArgument * exponent))));
+	return new ComplexNumber(Math.round(Math.pow(base.mod, exponent) * Math.cos(base.polarArgument * exponent)), (Math.round(Math.pow(base.mod, exponent) * Math.sin(base.polarArgument * exponent))));
     }
 };
