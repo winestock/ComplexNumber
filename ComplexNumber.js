@@ -16,6 +16,7 @@
  * @param Number        imaginary
  */
 function ComplexNumber(real,imaginary) {
+        "use strict";
         this.real = real;
         this.imaginary = imaginary;
 }
