@@ -63,10 +63,12 @@ ComplexNumber.prototype = {
          * 
          */
         toString: function() {
-            if (this.imaginary >= 0)
+            if (this.imaginary >= 0) {
             return this.real + " + " + this.imaginary + "i";
-            else 
-                return this.real + " - " + Math.abs(this.imaginary) + "i";
+            }
+            else {
+            return this.real + " - " + Math.abs(this.imaginary) + "i";
+            }
         },
 
     /**
