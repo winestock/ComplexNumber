@@ -12,39 +12,39 @@
 "use strict";
 
 /**
- * @param Number	real
- * @param Number	imaginary
+ * @param Number        real
+ * @param Number        imaginary
  */
 function ComplexNumber(real,imaginary) {
-	this.real = real;
-	this.imaginary = imaginary;
+        this.real = real;
+        this.imaginary = imaginary;
 }
 
 //Then we make the prototype object for the class so we can perform actions on complex numbers (like multiplication, addition, etc.)
 ComplexNumber.prototype = {
-	/* The real part of the complex number
-	 * 
-	 * @type Number
-	 */
-	real: 0,
-	
-	/* The imaginary part of the complex number
-	 * 
-	 * @type Number
-	 */
+        /* The real part of the complex number
+         * 
+         * @type Number
+         */
+        real: 0,
+        
+        /* The imaginary part of the complex number
+         * 
+         * @type Number
+         */
 
-	imaginary: 0,
+        imaginary: 0,
 
-	/**
-	 * The modulus of a complex number
-	 * 
-	 * @return number
-	 * 
-	 */
-	mod: function() {
-	    return Math.sqrt(this.real * this.real + this.imaginary * this.imaginary);
-	},
-	
+        /**
+         * The modulus of a complex number
+         * 
+         * @return number
+         * 
+         */
+        mod: function() {
+            return Math.sqrt(this.real * this.real + this.imaginary * this.imaginary);
+        },
+        
     /**
      * The argument of a complex number (polar form).
      * Please note that this number will be in radians.
@@ -53,21 +53,21 @@ ComplexNumber.prototype = {
      * 
      */
     polarArgument: function() {
-	return Math.atan2(this.imaginary, this.real);
+        return Math.atan2(this.imaginary, this.real);
     },
 
-	/**
-	 * The string representation of a complex number (e.g. 4 + 3i)
-	 * 
-	 * @return String
-	 * 
-	 */
-	toString: function() {
-	    if (this.imaginary >= 0)
-	    return this.real + " + " + this.imaginary + "i";
-	    else 
-		return this.real + " - " + Math.abs(this.imaginary) + "i";
-	},
+        /**
+         * The string representation of a complex number (e.g. 4 + 3i)
+         * 
+         * @return String
+         * 
+         */
+        toString: function() {
+            if (this.imaginary >= 0)
+            return this.real + " + " + this.imaginary + "i";
+            else 
+                return this.real + " - " + Math.abs(this.imaginary) + "i";
+        },
 
     /**
      * Use this function if you want to print out the complex number in polar form rather than the default rectangular form.
@@ -76,7 +76,7 @@ ComplexNumber.prototype = {
      * 
      */
     toStringPolar: function() {
-	return this.mod + ", " + this.polarArgument;
+        return this.mod + ", " + this.polarArgument;
     },
 
     /** The conjugate function returns the conjugate of the complex number.
@@ -85,8 +85,8 @@ ComplexNumber.prototype = {
      * 
      * */
     conjugate: function() {
-	return new ComplexNumber(this.real - this.imaginary);
-	}
+        return new ComplexNumber(this.real - this.imaginary);
+        }
 };
 
 
@@ -96,62 +96,62 @@ ComplexNumber.prototype = {
  */
 
 var ComplexMath = {
-	/**
-	 * The add operation which sums the real and complex parts separately
-	 * 
-	 * @param ComplexNumber   addend
-	 * @param ComplexNumber   summand
-	 * 
-	 * @return ComplexNumber
-	 * 
-	 */
-	add: function(addend, summand) {
+        /**
+         * The add operation which sums the real and complex parts separately
+         * 
+         * @param ComplexNumber   addend
+         * @param ComplexNumber   summand
+         * 
+         * @return ComplexNumber
+         * 
+         */
+        add: function(addend, summand) {
         return new ComplexNumber(addend.real + summand.real, addend.imaginary + summand.imaginary);
-	},
-	
-	/**
-	 * The subtract operation subtracts the real and complex parts from one another separately
-	 * 
-	 * @param ComplexNumber   minuend
-	 * @param ComplexNumber   subtrahend
-	 * 
-	 * @return ComplexNumber
-	 * 
-	 */
-	sub: function(minuend, subtrahend) {
+        },
+        
+        /**
+         * The subtract operation subtracts the real and complex parts from one another separately
+         * 
+         * @param ComplexNumber   minuend
+         * @param ComplexNumber   subtrahend
+         * 
+         * @return ComplexNumber
+         * 
+         */
+        sub: function(minuend, subtrahend) {
         return new ComplexNumber(minuend.real - subtrahend.real, minuend.imaginary - subtrahend.imaginary);
-	},
-	
-	/**
-	 * The multiplication operation which multiplies two complex numbers
-	 * 
-	 * @param ComplexNumber   multiplicand
-	 * @param ComplexNumber   multiplier
-	 * 
-	 * @return ComplexNumber
-	 * 
-	 */
-	mult: function(multiplicand, multiplier) {
-	return new ComplexNumber(multiplicand.real * multiplier.real - multiplicand.imaginary * multiplier.imaginary, multiplicand.real * multiplier.imaginary + multiplicand.imaginary * multiplier.real);
-	},
-	
-	/**
-	 * The division operation divides two complex numbers according to the following formula:
-	 * 
-	 * 
-	 * a + bi   ac + bd   bc - ad
-	 * ------ = ------- + -------*i
-	 * c + di   c^2+d^2   c^2+d^2
-	 *
-	 * @param ComplexNumber   dividend
-	 * @param ComplexNumber   divisor
-	 * 
-	 * @return ComplexNumber
-	 * 
-	 */
-	 div: function(dividend, divisor) {
-	 return new ComplexNumber((dividend.real * divisor.real + dividend.imaginary * divisor.imaginary) / (divisor.real * divisor.real + divisor.imaginary * divisor.imaginary), (dividend.imaginary * divisor.real - dividend.real * divisor.imaginary) / (divisor.real * divisor.real + divisor.imaginary * divisor.imaginary));
-	},
+        },
+        
+        /**
+         * The multiplication operation which multiplies two complex numbers
+         * 
+         * @param ComplexNumber   multiplicand
+         * @param ComplexNumber   multiplier
+         * 
+         * @return ComplexNumber
+         * 
+         */
+        mult: function(multiplicand, multiplier) {
+        return new ComplexNumber(multiplicand.real * multiplier.real - multiplicand.imaginary * multiplier.imaginary, multiplicand.real * multiplier.imaginary + multiplicand.imaginary * multiplier.real);
+        },
+        
+        /**
+         * The division operation divides two complex numbers according to the following formula:
+         * 
+         * 
+         * a + bi   ac + bd   bc - ad
+         * ------ = ------- + -------*i
+         * c + di   c^2+d^2   c^2+d^2
+         *
+         * @param ComplexNumber   dividend
+         * @param ComplexNumber   divisor
+         * 
+         * @return ComplexNumber
+         * 
+         */
+         div: function(dividend, divisor) {
+         return new ComplexNumber((dividend.real * divisor.real + dividend.imaginary * divisor.imaginary) / (divisor.real * divisor.real + divisor.imaginary * divisor.imaginary), (dividend.imaginary * divisor.real - dividend.real * divisor.imaginary) / (divisor.real * divisor.real + divisor.imaginary * divisor.imaginary));
+        },
 
     /**
      * The power function takes a complex number to a given power.  This function uses the De Moivre formula.  This means that the power must be an integer.  The form of De Moivre's formula used here is:
@@ -172,6 +172,6 @@ var ComplexMath = {
      * 
      */
     power: function(base, exponent) {
-	return new ComplexNumber(Math.round(Math.pow(base.mod, exponent) * Math.cos(base.polarArgument * exponent)), (Math.round(Math.pow(base.mod, exponent) * Math.sin(base.polarArgument * exponent))));
+        return new ComplexNumber(Math.round(Math.pow(base.mod, exponent) * Math.cos(base.polarArgument * exponent)), (Math.round(Math.pow(base.mod, exponent) * Math.sin(base.polarArgument * exponent))));
     }
 };
