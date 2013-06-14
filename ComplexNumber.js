@@ -9,6 +9,7 @@
  * @version 1.0.0 (6-10-2013)
  */
 
+"use strict";
 
 /**
  * @param Number	real
